@@ -1,5 +1,4 @@
 name: Build and Push Docker Image
-
 on:
   push:
     branches:
@@ -7,7 +6,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: [self-hosted, linux, autumn]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -27,4 +26,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: your-dockerhub-username/your-repo-name:latest
+          tags: |
+            uninspiredstudioops/parallel-dom:latest
+          platforms: linux/amd64,linux/arm64
