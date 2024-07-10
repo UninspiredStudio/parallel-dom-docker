@@ -1,6 +1,0 @@
-services:
-  pdom:
-    restart: always
-    image: uninspiredstudio/pdom:latest
-    ports:
-      - "8080:80"
